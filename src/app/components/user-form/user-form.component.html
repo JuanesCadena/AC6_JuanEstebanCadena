@@ -1,0 +1,61 @@
+<div class="container mt-4">
+  <h2>{{ isUpdate ? 'Editar Usuario' : 'Crear Usuario' }}</h2>
+
+  <form [formGroup]="userForm" (ngSubmit)="submit()">
+    <div class="mb-3">
+      <label>Nombre de Usuario <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" formControlName="username" />
+      <div *ngIf="userForm.get('username')?.invalid && userForm.get('username')?.touched" class="text-danger">
+        El nombre de usuario es obligatorio
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label>Nombre <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" formControlName="first_name" />
+      <div *ngIf="userForm.get('first_name')?.invalid && userForm.get('first_name')?.touched" class="text-danger">
+        El nombre es obligatorio
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label>Apellido <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" formControlName="last_name" />
+      <div *ngIf="userForm.get('last_name')?.invalid && userForm.get('last_name')?.touched" class="text-danger">
+        El apellido es obligatorio
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label>Email <span class="text-danger">*</span></label>
+      <input type="email" class="form-control" formControlName="email" />
+      <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" class="text-danger">
+        <div *ngIf="userForm.get('email')?.errors?.['required']">El correo es obligatorio</div>
+        <div *ngIf="userForm.get('email')?.errors?.['email']">Formato de correo no válido</div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label>Foto de Perfil (URL) <span class="text-danger">*</span></label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="image"
+        (input)="onImageChange($event)"
+        placeholder="https://ejemplo.com/foto.jpg"
+      />
+      <div *ngIf="userForm.get('image')?.invalid && userForm.get('image')?.touched" class="text-danger">
+        <div *ngIf="userForm.get('image')?.errors?.['required']">La imagen es obligatoria</div>
+        <div *ngIf="userForm.get('image')?.errors?.['pattern']">Debe ser una URL de imagen válida (.jpg, .png, .gif)</div>
+      </div>
+      <div *ngIf="selectedImage" class="mt-2">
+        <img [src]="selectedImage" alt="Preview" class="img-thumbnail" style="max-width: 150px;" />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="userForm.invalid">
+      {{ isUpdate ? 'Actualizar' : 'Guardar' }}
+    </button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="goHome()">Cancelar</button>
+  </form>
+</div>

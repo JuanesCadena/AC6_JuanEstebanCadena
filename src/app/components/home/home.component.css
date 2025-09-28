@@ -1,0 +1,55 @@
+.action-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.icon-button i {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.icon-button:hover {
+  color: #007bff;
+}
+
+.card-image-wrapper {
+  width: 140px;   
+  height: 140px;
+  margin: 0 auto;
+  border-radius: 50%;  
+  overflow: hidden;    
+}
+
+.user-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+  display: block;
+}
+.card-image-wrapper {
+  width: 140px; 
+  height: 140px;
+  margin: 10px auto;
+  border-radius: 50%;  
+  overflow: hidden;   
+  padding: 5px;        
+  background-color: #fff; 
+}
+
+.user-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+  display: block;
+  border-radius: 50%;  
+}

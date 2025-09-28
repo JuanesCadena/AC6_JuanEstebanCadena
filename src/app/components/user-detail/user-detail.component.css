@@ -1,0 +1,81 @@
+.user-detail-grid {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  height: 80vh;
+  margin-top: 4rem; 
+}
+.image-col {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+}
+
+.user-image-wrapper {
+  width: 50vh;      
+  height: 50vh;     
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; 
+}
+
+.user-detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  
+  display: block;
+}
+.separator {
+  width: 5px;
+  background-color: black;
+  margin: 0 40px;  
+}
+
+.info-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  border-left: 3px solid black; 
+  padding-left: 20px;
+  height: 70vh; 
+}
+
+.info-col h2 {
+  font-size: 3rem; 
+  margin: 0;
+}
+
+.info-col p {
+  font-size: 1.5rem; 
+  margin: 10px 0;
+}
+
+.action-buttons {
+  margin-top: auto;
+  display: flex;
+  padding: 0;
+  border: 2px solid black; 
+  border-radius: 5px;     
+  overflow: hidden;         
+}
+
+.action-buttons button {
+  flex: 1;                  
+  margin: 0;                
+  border: none;          
+  background-color: white;
+  color: black;
+  padding: 10px 0;         
+  cursor: pointer;
+}
+
+.action-buttons button:not(:last-child) {
+  border-right: 1px solid black; 
+}
+
+.action-buttons button:hover {
+  background-color: #f0f0f0;
+}
